@@ -55,9 +55,8 @@ streamlit.header("View our fruit list - add your favorites!")
 if streamlit.button('Get Fruit List'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   my_data_rows = get_fruit_load_list()
-  ny_cnx.close()
+  #ny_cnx.close()
   streamlit.dataframe(my_data_rows)
-
 
 # Allow user to add fruit to list
 def insert_row_snowflake(new_fruit):
